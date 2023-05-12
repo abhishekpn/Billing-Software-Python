@@ -472,6 +472,15 @@ class Bill_App:
                 present = "yes"
         if present == "no":
             messagebox.showerror("Error", "Invalid Bill No")
+            
+      #==============delete bill========================
+    def delete_bill(self):
+        op = messagebox.showwarning("Delete","Do you want to delete the bill?")
+        for i in os.listdir("bills/"):
+            if i.split('.')[0] == self.search_bill.get():
+                os.remove(f"bills/{i}")
+                self.txtarea.delete("1.0", END)
+            messagebox.showinfo("Deleted","Bill has been deleted!")
 
     #=================clear bill=================================           
     def clear_data(self):
