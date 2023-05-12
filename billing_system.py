@@ -468,7 +468,7 @@ class Bill_App:
                 self.txtarea.delete("1.0", END)
                 for d in f1:
                     self.txtarea.insert(END, d)
-                    f1.close()
+                f1.close()
                 present = "yes"
         if present == "no":
             messagebox.showerror("Error", "Invalid Bill No")
